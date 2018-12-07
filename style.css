@@ -51,7 +51,6 @@ a:focus {outline:none;}
 }
 
 
-
 /* ========================================
 	全体設計
 ========================================= */
@@ -73,6 +72,15 @@ a:link, a:hover, a:active, a:visited {
 	text-decoration: none;
 }
 
+a {
+	transition: opacity 0.15s;
+}
+
+a:hover {
+	opacity: 0.7;
+}
+
+
 /* ========================================
 	ラッパー
 ========================================= */
@@ -91,28 +99,29 @@ a:link, a:hover, a:active, a:visited {
 	height: 99px;
 }
 
-.logo {
+.header .logo {
 	width: 213px;
 	height: 39px;
 	float: left;
 	margin-top: 30px;
 }
 
-nav {
+.header nav {
 	float: right;
 	margin-top: 56px;
 }
 
-nav ul li {
+.header nav ul li {
 	float: left;
 	margin-left: 30px;
 }
 
-nav ul li a {
+.header nav ul li a {
 	text-decoration: none;
 	color: #555;
 	font-weight: bold;
 	font-size: 14px;
+	letter-spacing: 0.16em;
 }
 
 
@@ -137,11 +146,21 @@ nav ul li a {
 	margin-right: 30px;
 }
 
+.tel a {
+	background: url("images/icon_tel.png") no-repeat 14px center;
+}
+.blog a {
+	background: url("images/icon_blog.png") no-repeat 14px center;
+}
+.voice a {
+	background: url("images/icon_voice.png") no-repeat 14px center;
+}
+
 .left a {
 	display: block;
 	width: 280px;
 	height: 50px;
-	background-color: #F5FBFF;
+	background-color: #f5fbff;
 	margin-bottom: 10px;
 	border: 1px solid #63abd4;
 	font-size: 16px;
@@ -151,24 +170,13 @@ nav ul li a {
 	padding-left: 50px;
 }
 
-.tel a {
-		background: url("images/icon_tel.png") no-repeat 14px center;
-}
-.blog a {
-		background: url("images/icon_blog.png") no-repeat 14px center;
-}
-.voice a {
-		background: url("images/icon_voice.png") no-repeat 14px center;
-}
-
 
 /* ========================================
 	ライト
 ========================================= */
 .right {
 	width: 650px;
-	height: 300px;
-	background-color: plum;
+	height: auto;
 	float: left;
 }
 
@@ -176,13 +184,98 @@ nav ul li a {
 	clear: both;
 }
 
+.right h2 {
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	line-height: 1.4;
+	margin-bottom: 10px;
+}
+
+.right ul {
+	font-size: 0;
+}
+
+.right ul li a {
+	display: block;
+	padding: 0 14px;
+}
+
+.right ul li:nth-of-type(odd) a {
+	background-color: #f5f5f5;
+}
+.right ul li:nth-of-type(even) a {
+	background-color: #fff;
+}
+
+.right time {
+	font-size: 12px;
+	color: #b8b8b8;
+	line-height: 40px;
+	padding-right: 14px;
+}
+
+.right p {
+	display: inline-block;
+	font-size: 13px;
+	color: #555;
+	line-height: 40px;
+}
+
+
+/* ========================================
+	ページトップ
+========================================= */
+.pagetop {
+	display: inline-block;
+	width: 78px;
+	height: 20px;
+	margin-top: 30px;
+	float: right;
+}
+.pagetop a {
+	display: block;
+	color: #fff;
+	font-size: 12px;
+	letter-spacing: 0.04em;
+	text-align: center;
+	line-height: 20px;
+	background-color: #63abd4;
+}
+.pagetop a:hover {
+	opacity: inherit;
+}
 
 /* ========================================
 	フッター
 ========================================= */
 .footer {
 	width: 100%;
-	height: 79px;
-	background: blue;
-	margin-top: 30px;
+	height: auto;
+	background-color: #63abd4;
+	padding: 20px 0;
+}
+
+.footer .logo {
+	width: 213px;
+	height: 39px;
+	float: left;
+}
+
+.footer ul {
+	float: right;
+	margin-top: 26px;
+}
+
+.footer ul li {
+	float: left;
+	margin-left: 30px;
+}
+
+.footer ul li a {
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+	letter-spacing: 0.16em;
 }
