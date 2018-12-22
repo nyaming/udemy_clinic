@@ -37,19 +37,14 @@ table{border-collapse: collapse; border-spacing:0;}
 caption, th{text-align: left;}
 a:focus {outline:none;}
 
-
 /* ========================================
 	フロートの解除
 ========================================= */
-
 .clearfix:after {
-  content: ".";
+  content: "";
   display: block;
-  height: 0;
   clear: both;
-  visibility: hidden;
 }
-
 
 /* ========================================
 	全体設計
@@ -63,47 +58,48 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
 *, *::before, *::after {
 	box-sizing: border-box;
 }
-
 a:link, a:hover, a:active, a:visited {
 	text-decoration: none;
 }
-
 a {
 	transition: opacity 0.15s;
 }
-
 a:hover {
 	opacity: 0.7;
 }
-
 
 /* ========================================
 	ラッパー
 ========================================= */
 .wrapper {
-	width: 960px;
+	width: 100%;
+	max-width: 960px;
 	height: auto;
 	margin: 0 auto;
+	padding: 0 30px;
 }
-
 
 /* ========================================
 	ヘッダー
 ========================================= */
 .header {
-	width: 960px;
+	width: 100%;
+	max-width: 960px;
 	height: 99px;
+	margin: 0 auto;
 }
 
 .header .logo {
-	width: 213px;
-	height: 39px;
 	float: left;
 	margin-top: 30px;
+}
+
+.header .logo img {
+	width: 213px;
+	height: 39px;
 }
 
 .header nav {
@@ -129,9 +125,14 @@ a:hover {
 	メイン画像
 ========================================= */
 .mainimage {
-	width: 960px;
-	height: 300px;
-	margin-bottom: 30px;
+	width: 100%;
+	max-width: 960px;
+	height: auto;
+	margin: 0 auto 30px;
+}
+
+.mainimage img {
+	width: 100%;
 }
 
 
@@ -139,11 +140,10 @@ a:hover {
 	レフト
 ========================================= */
 .left {
-	width: 280px;
+	width: 29.1666%;
 	height: auto;
-
 	float: left;
-	margin-right: 30px;
+	margin-right: 3.125%;
 }
 
 .tel a {
@@ -158,16 +158,13 @@ a:hover {
 
 .left a {
 	display: block;
-	width: 280px;
-	height: 50px;
 	background-color: #f5fbff;
 	margin-bottom: 10px;
 	border: 1px solid #63abd4;
 	font-size: 16px;
 	font-weight: bold;
 	color: #555;
-	line-height: 50px;
-	padding-left: 50px;
+	padding: 17px 0 17px 50px;
 }
 
 
@@ -175,13 +172,9 @@ a:hover {
 	ライト
 ========================================= */
 .right {
-	width: 650px;
+	width: 67.7083%;
 	height: auto;
 	float: left;
-}
-
-.clearfix {
-	clear: both;
 }
 
 .right h2 {
@@ -256,10 +249,20 @@ a:hover {
 	padding: 20px 0;
 }
 
+.footer_wrapper {
+	width: 100%;
+	max-width: 960px;
+	height: auto;
+	margin: 0 auto;
+}
+
 .footer .logo {
+	float: left;
+}
+
+.footer .logo img {
 	width: 213px;
 	height: 39px;
-	float: left;
 }
 
 .footer ul {
@@ -278,4 +281,57 @@ a:hover {
 	font-weight: bold;
 	font-size: 14px;
 	letter-spacing: 0.16em;
+	display: block;
+
 }
+
+/* ========================================
+	メディアクエリ　960px以下
+========================================= */
+@media screen and (max-width: 960px) {
+	.header .logo {
+		text-align: center;
+		width: 100%;
+		margin: 15px auto;
+	}
+
+	.footer {
+		text-align: center;
+	}
+	.footer .logo {
+		float: none;
+	}
+	.footer ul {
+		float: none;
+	}
+	.footer ul li {
+		float: none;
+		padding: 15px 0;
+		margin-left: 0;
+		border-bottom: 1px solid #3685af;
+	}
+	.footer ul li:first-child {
+		border-top: 1px solid #3685af;
+	}
+	/* ========================================
+		メディアクエリ　480px以下
+	========================================= */
+	@media screen and (max-width: 480px) {
+		.left, .right {
+			float: none;
+			width: 100%;
+		}
+		.left {
+			margin-right: 0;
+			margin-bottom: 30px;
+		}
+
+		.right p {
+			display: block;
+			line-height: 2.0;
+		}
+		.right time {
+			line-height: 2.0;
+		}
+
+		}
